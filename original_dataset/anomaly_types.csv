@@ -1,0 +1,201 @@
+ID,Class,Subclass,Category,Dimensionality,Locality,Length
+id_1,class_6,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_2,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_3,class_7,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_4,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_5,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_6,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_7,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_8,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_9,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_10,class_9,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_11,class_11,unknown,Anomaly,Multivariate,Local,Subsequence
+id_12,class_11,unknown,Anomaly,Multivariate,Global,Subsequence
+id_13,class_11,unknown,Anomaly,Multivariate,Global,Subsequence
+id_14,class_4,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_15,class_4,unknown,Rare Event,Multivariate,Global,Subsequence
+id_16,class_16,unknown,Rare Event,Multivariate,Local,Subsequence
+id_17,class_4,unknown,Rare Event,Multivariate,Global,Subsequence
+id_18,class_9,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_19,class_16,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_20,class_18,unknown,Anomaly,Multivariate,Local,Subsequence
+id_21,class_4,unknown,Rare Event,Multivariate,Global,Subsequence
+id_22,class_16,unknown,Rare Event,Multivariate,Global,Subsequence
+id_23,class_16,unknown,Rare Event,Multivariate,Local,Subsequence
+id_24,class_10,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_25,class_19,unknown,Anomaly,Multivariate,Global,Subsequence
+id_26,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_27,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_28,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_29,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_30,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_31,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_32,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_33,class_8,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_34,class_8,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_35,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_36,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_37,class_10,unknown,Rare Event,Multivariate,Local,Subsequence
+id_38,class_12,unknown,Rare Event,Multivariate,Local,Subsequence
+id_39,class_16,subclass_2,Rare Event,Multivariate,Local,Subsequence
+id_40,class_16,unknown,Rare Event,Multivariate,Local,Subsequence
+id_41,class_10,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_42,class_1,unknown,Anomaly,Univariate,Local,Point
+id_43,class_13,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_44,class_4,unknown,Rare Event,Multivariate,Global,Subsequence
+id_45,class_7,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_46,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_47,class_16,unknown,Rare Event,Multivariate,Local,Subsequence
+id_48,class_16,unknown,Rare Event,Multivariate,Local,Subsequence
+id_49,class_12,unknown,Rare Event,Multivariate,Local,Subsequence
+id_50,class_12,unknown,Rare Event,Multivariate,Local,Subsequence
+id_51,class_16,unknown,Rare Event,Multivariate,Local,Subsequence
+id_52,class_5,unknown,Communication Gap,,,
+id_53,class_5,unknown,Communication Gap,,,
+id_54,class_5,unknown,Communication Gap,,,
+id_55,class_16,subclass_3,Rare Event,Multivariate,Local,Point
+id_56,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_57,class_5,unknown,Communication Gap,,,
+id_58,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_59,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_60,class_22,subclass_2,Rare Event,Univariate,Local,Subsequence
+id_61,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_62,class_22,subclass_3,Anomaly,Univariate,Global,Subsequence
+id_63,class_22,subclass_3,Anomaly,Univariate,Global,Subsequence
+id_64,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_65,class_22,subclass_3,Anomaly,Univariate,Global,Subsequence
+id_66,class_22,subclass_3,Anomaly,Univariate,Global,Subsequence
+id_67,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_68,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_69,class_22,subclass_2,Rare Event,Univariate,Local,Subsequence
+id_70,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_71,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_72,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_73,class_15,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_74,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_75,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_76,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_77,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_78,class_6,subclass_2,Rare Event,Multivariate,Global,Subsequence
+id_79,class_2,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_80,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_81,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_82,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_83,class_3,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_84,class_17,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_85,class_21,unknown,Anomaly,Multivariate,Local,Subsequence
+id_86,class_15,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_87,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_88,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_89,class_2,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_90,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_91,class_3,subclass_2,Anomaly,Multivariate,Local,Subsequence
+id_92,class_7,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_93,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_94,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_95,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_96,class_15,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_97,class_7,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_98,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_99,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_100,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_101,class_20,unknown,Anomaly,Multivariate,Global,Subsequence
+id_102,class_20,unknown,Anomaly,Multivariate,Global,Subsequence
+id_103,class_20,unknown,Anomaly,Multivariate,Global,Subsequence
+id_104,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_105,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_106,class_14,subclass_2,Rare Event,Multivariate,Global,Subsequence
+id_107,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_108,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_109,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_110,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_111,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_112,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_113,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_114,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_115,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_116,class_14,subclass_3,Anomaly,Multivariate,Global,Subsequence
+id_117,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_118,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_119,class_7,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_120,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_121,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_122,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_123,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_124,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_125,class_2,subclass_3,Rare Event,Multivariate,Global,Subsequence
+id_126,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_127,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_128,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_129,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_130,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_131,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_132,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_133,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_134,class_14,subclass_4,Anomaly,Multivariate,Global,Subsequence
+id_135,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_136,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_137,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_138,class_15,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_139,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_140,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_141,class_7,subclass_2,Anomaly,Multivariate,Local,Subsequence
+id_142,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_143,class_7,subclass_2,Anomaly,Multivariate,Local,Subsequence
+id_144,class_22,subclass_1,Anomaly,Univariate,Local,Subsequence
+id_145,class_22,subclass_4,Anomaly,Multivariate,Global,Subsequence
+id_146,class_7,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_147,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_148,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_149,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_150,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_151,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_152,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_153,class_17,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_154,class_14,subclass_1,Rare Event,Multivariate,Global,Subsequence
+id_155,class_14,subclass_5,Rare Event,Multivariate,Local,Subsequence
+id_156,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_157,class_17,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_158,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_159,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_160,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_161,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_162,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_163,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_164,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_165,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_166,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_167,class_20,unknown,Anomaly,Multivariate,Global,Subsequence
+id_168,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_169,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_170,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_171,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_172,class_3,subclass_2,Anomaly,Multivariate,Global,Point
+id_173,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_174,class_15,subclass_2,Rare Event,Multivariate,Local,Subsequence
+id_175,class_14,subclass_1,Rare Event,Multivariate,Local,Subsequence
+id_176,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_177,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_178,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_179,class_7,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_180,class_2,subclass_4,Rare Event,Multivariate,Global,Subsequence
+id_181,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_182,class_14,subclass_6,Rare Event,Multivariate,Local,Subsequence
+id_183,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_184,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_185,class_3,subclass_1,Anomaly,Multivariate,Global,Subsequence
+id_186,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_187,class_3,subclass_2,Anomaly,Multivariate,Global,Subsequence
+id_188,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_189,class_7,subclass_1,Anomaly,Multivariate,Local,Subsequence
+id_190,class_22,subclass_2,Rare Event,Univariate,Local,Subsequence
+id_191,class_22,subclass_3,Anomaly,Univariate,Local,Subsequence
+id_192,class_22,subclass_3,Anomaly,Univariate,Global,Subsequence
+id_193,class_22,subclass_3,Anomaly,Multivariate,Local,Subsequence
+id_194,class_22,subclass_1,Anomaly,Univariate,Local,Subsequence
+id_195,class_22,subclass_1,Anomaly,Univariate,Global,Subsequence
+id_196,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_197,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_198,class_22,subclass_2,Rare Event,Univariate,Global,Subsequence
+id_199,class_22,subclass_1,Anomaly,Univariate,Local,Subsequence
+id_200,class_15,subclass_1,Anomaly,Multivariate,Global,Subsequence
