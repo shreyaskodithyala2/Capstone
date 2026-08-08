@@ -1,0 +1,22 @@
+START Sat Aug  1 02:44:06 IST 2026
+device=mps | train rows=6259537 val rows=1104624 | stride=10 | ~625943 train windows | 14s
+GDN params: 157254
+  epoch 1: train_mse=0.3342 val_mse=0.0313 | 37s
+  epoch 2: train_mse=0.3278 val_mse=0.0307 | 59s
+  epoch 3: train_mse=0.3172 val_mse=0.0308 | 84s
+  epoch 4: train_mse=0.3183 val_mse=0.0299 | 109s
+  epoch 5: train_mse=0.3072 val_mse=0.0310 | 133s
+  epoch 6: train_mse=0.3133 val_mse=0.0297 | 158s
+  epoch 7: train_mse=0.3063 val_mse=0.0331 | 182s
+  epoch 8: train_mse=0.2905 val_mse=0.0322 | 206s
+  epoch 9: train_mse=0.3106 val_mse=0.0312 | 231s
+  epoch 10: train_mse=0.2940 val_mse=0.0329 | 255s
+  epoch 11: train_mse=0.2035 val_mse=0.0316 | 280s
+  early stop
+smooth=10 | val 99.9pct threshold = 9.811 | 286s
+test scored; A range [-1.01,708.40] | 356s
+y_true events: 65 (Anomaly=29, RareEvent=36)
+[VAL-THRESHOLD] EW_F0.5=0.0193 (P=0.016 R=0.400) pos=120661
+[ORACLE-BEST]   EW_F0.5=0.1777 (P=0.212 R=0.108) @thr=66.908
+DONE total 471s
+EXIT 0 Sat Aug  1 02:51:59 IST 2026

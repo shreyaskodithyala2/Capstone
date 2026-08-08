@@ -1,0 +1,24 @@
+START Sat Aug  1 22:27:25 IST 2026
+device=mps | rounds=8 x local_epochs=2 = 16 total epochs | FedProx mu=0.01 trim=0
+  M1: N=6 channels, train rows=6259537, ~312972 windows
+  M2: N=11 channels, train rows=2607121, ~325878 windows
+=== SOLO (each mission trained independently) ===
+  SOLO M1: EW_F0.5=0.1765 (P=0.600 R=0.046) | 298s
+  SOLO M2: EW_F0.5=0.7739 (P=0.742 R=0.934) | 606s
+=== FEDERATED (cross-mission: shared operators, personalized embeddings) ===
+  round 1/8 aggregated | 642s
+  round 2/8 aggregated | 679s
+  round 3/8 aggregated | 715s
+  round 4/8 aggregated | 751s
+  round 5/8 aggregated | 788s
+  round 6/8 aggregated | 824s
+  round 7/8 aggregated | 860s
+  round 8/8 aggregated | 897s
+  FED  M1: EW_F0.5=0.1370 (P=1.000 R=0.031) | 1074s
+  FED  M2: EW_F0.5=0.7820 (P=0.747 R=0.960) | 1212s
+================ RESULT (EW corrected event-wise F0.5) ================
+mission       SOLO   FEDERATED     delta
+M1          0.1765      0.1370   -0.0395
+M2          0.7739      0.7820   +0.0081
+DONE total 1212s
+EXIT 0 Sat Aug  1 22:47:38 IST 2026

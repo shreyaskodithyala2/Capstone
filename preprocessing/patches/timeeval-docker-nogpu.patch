@@ -1,0 +1,22 @@
+diff --git a/timeeval/adapters/docker.py b/timeeval/adapters/docker.py
+index 168d5d3..62f8fba 100644
+--- a/timeeval/adapters/docker.py
++++ b/timeeval/adapters/docker.py
+@@ -1,4 +1,5 @@
+ import json
++import os
+ import subprocess
+ from dataclasses import dataclass, asdict, field
+ from pathlib import Path, WindowsPath, PosixPath
+@@ -153,7 +154,10 @@ class DockerAdapter(Adapter):
+             memswap_limit=memory_limit,
+             nano_cpus=cpu_shares,
+             detach=True,
+-            device_requests=[DeviceRequest(device_ids=["all"], capabilities=[['gpu']])]
++            # GPU request removed: Docker Desktop on macOS (arm64) has no GPU, so requesting
++            # one makes container start fail with HTTP 500. Non-deep algorithms run on CPU.
++            device_requests=([DeviceRequest(device_ids=["all"], capabilities=[['gpu']])]
++                             if os.environ.get("TIMEEVAL_USE_GPU") == "1" else None)
+         )
+ 
+     def _run_until_timeout(self, container: Container, args: dict) -> None:
