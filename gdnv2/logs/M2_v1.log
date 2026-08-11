@@ -1,0 +1,43 @@
+START Mon Aug 10 00:22:17 IST 2026
+M2: T_train=3,067,201 T_test=3,062,401 n_ch=11 n_tc=4 dev=mps
+  ep1: train=0.56196 val=6.96503
+  ep2: train=0.18773 val=6.39480
+  ep3: train=0.14626 val=6.43715
+  ep4: train=0.13392 val=6.39985
+  ep5: train=0.11808 val=6.30517
+  ep6: train=0.17135 val=6.30940
+  ep7: train=0.11797 val=6.33274
+  ep8: train=0.08939 val=6.61623
+  ep9: train=0.09069 val=6.16636
+  ep10: train=0.10892 val=6.00192
+  ep11: train=0.10006 val=5.76263
+  ep12: train=0.09294 val=5.58187
+  ep13: train=0.08283 val=5.25493
+  ep14: train=0.07219 val=5.54391
+  ep15: train=0.08492 val=5.49600
+  ep16: train=0.07183 val=5.90534
+  ep17: train=0.07915 val=5.41197
+  early stop
+trained in 604s
+error passes done 629s
+=== TRAIN-period official F0.5 (tuning signal) ===
+          q0.995: F0.5=0.8958 (P=1.000 R=0.632)
+          q0.998: F0.5=0.8185 (P=1.000 R=0.474)
+          q0.999: F0.5=0.6341 (P=1.000 R=0.257)
+         q0.9995: F0.5=0.0181 (P=1.000 R=0.004)
+         q0.9998: F0.5=0.0181 (P=1.000 R=0.004)
+         q0.9999: F0.5=0.0181 (P=1.000 R=0.004)
+        q0.99995: F0.5=0.0181 (P=1.000 R=0.004)
+           prune: F0.5=0.2381 (P=1.000 R=0.059)
+>> PRE-REGISTERED mode (best on train): q0.995
+=== TEST official F0.5 ===
+          q0.995: F0.5=0.8062 (P=1.000 R=0.454)  <-- HEADLINE
+          q0.998: F0.5=0.6962 (P=1.000 R=0.314)
+          q0.999: F0.5=0.4824 (P=1.000 R=0.157)
+         q0.9995: F0.5=0.0414 (P=1.000 R=0.009)
+         q0.9998: F0.5=0.0279 (P=1.000 R=0.006)
+         q0.9999: F0.5=0.0279 (P=1.000 R=0.006)
+        q0.99995: F0.5=0.0279 (P=1.000 R=0.006)
+           prune: F0.5=0.0141 (P=1.000 R=0.003)
+DONE 1118s
+EXIT 0 Mon Aug 10 00:40:58 IST 2026

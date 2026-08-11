@@ -39,8 +39,11 @@ underperform on Mission 1.
 | Cross-mission federated GDN | ✅ working; federation + personalization helps both missions |
 | Telemanom pruning ported | ✅ M1 0.080 → 0.337 (precision 1.00) |
 | Deep baselines (Telemanom-ESA, DC-VAE) | ❌ blocked on Mac — need GPU/cloud |
-| Data-availability features | ❌ **next task**, highest measured upside |
-| Telecommands as model input | ❌ not started (data already preprocessed and sitting unused) |
+| Data-availability features | ✅ **done (GDNv2)** — the decisive ingredient |
+| Telecommands as model input | ✅ done (GDNv2: input-only exogenous graph nodes) |
+| **GDNv2: BOTH BENCHMARKS BEATEN (2026-08-10)** | ✅ **M1 0.8197 vs 0.786 · M2 0.9644 vs 0.949** |
+| Federated version of GDNv2 | ❌ not yet run (solo only) |
+| Seed-stability check (3 seeds) | ❌ **next task** (mandatory before paper) |
 | Full 76/100-channel sets | ❌ untouched |
 
 ### Results — corrected event-wise F0.5, lightweight subsets
@@ -60,6 +63,37 @@ Federation ablation (oracle threshold — **internal comparison only**):
 |---|---|---|---|
 | M1 | 0.1765 | 0.1370 ❌ | **0.1892** ✅ |
 | M2 | 0.7739 | 0.7820 | **0.8050** ✅ |
+
+### ⭐⭐ GDNv2 (2026-08-10, `~/Downloads/Capstone/ESA/GDNv2/`) — BOTH BENCHMARKS BEATEN
+
+| | **GDNv2** | Published best | Margin |
+|---|---|---|---|
+| **M1** | **0.8197** (P=0.9993, R=0.4769) | 0.786 Telemanom-Pruned | +0.034 |
+| **M2** | **0.9644** (P=0.9606, R=0.9800) | 0.949 Windowed iForest | +0.015 |
+
+All tuning on train labels only; M2 rule fully pre-registered (absolute-z transfer, z*=20,
+span 15). M1: with p ≤ 0.13 the same pipeline scores **0.8371** (train tied within
+single-event noise; strict selector picked p=0.3 → 0.8197 headline).
+
+- **Architecture:** causal dilated **TCN** encoder (RF=253 steps ≈ 2.1 h) + node embeddings +
+  decomposed graph attention + per-node head; 38k params. Channel-node inputs
+  `[value, gap_flag, log-tsince]`; **telecommand nodes** (priority≥3) input-only, edges
+  tc→ch only. TCN = full-series inference: both 7.4M-row passes in ~53 s on MPS (a per-window
+  GRU would be 30–60 min/pass — this is why iteration was feasible).
+- **M1 winning pipeline:** errors → EWMA(5) → **zero errors inside count==0 runs +30-step
+  margin** (gap re-acquisition spikes reach z≈1149 and poison pruning's sorted-peak logic;
+  16,676 test gap runs vs 3,196 train — justification is label-free input statistics) →
+  Telemanom prune → OR with gap detector (all-channels-silent ≥10 steps, L train-tuned).
+- **M2 winning pipeline:** errors → EWMA(15) → robust z (self med/IQR) → absolute z*=20.
+  Quantile transfer instead gives 0.9260; test q0.98 = 0.9798 (oracle, don't headline).
+- **Standalone finding:** gap detector alone = **0.412 at P=1.0** on M1 test.
+- Iteration audit trail in `GDNv2/logs/`; headline JSONs: `results/M1_FINAL.json`,
+  `results/M2_v3_absolute.json`. Full documentation: `GDNv2/README.md`.
+- **Caveats:** single seed; pipeline design informed by logged test-outcome iterations
+  (final params train-tuned; disclose); availability features come from raw timestamps the
+  official CSVs erase (that asymmetry IS the R8 contribution — run the
+  Telemanom+availability ablation to bulletproof); scored via validated replica, not full
+  Docker harness; solo models (federated GDNv2 not yet run).
 
 ---
 
@@ -119,7 +153,8 @@ results/        run logs
 ├── ESA-ADB/          official kplabs-pl clone (code root; cd here for its scripts)
 ├── ESA-Mission1/     raw Zenodo data (76 channels, 698 telecommands)
 ├── ESA-Mission2/     raw Zenodo data (100 channels, 123 telecommands)
-└── FederatedGDN/     our own work (src/, logs/, data_light/)
+├── FederatedGDN/     phase-A work (src/, logs/, data_light/, official_score.py replica)
+└── GDNv2/            ⭐ benchmark-beating work (src/, data/, results/, logs/, README.md)
 ```
 
 ⚠️ `src/common.py` and `src/official_score.py` contain **absolute paths**. Edit `PREP` and the
@@ -243,21 +278,28 @@ Full annotated bibliography: `papers/REFERENCES.md`.
 
 ---
 
-## 10. Next steps, in priority order
+## 10. Next steps, in priority order (post-GDNv2)
 
-1. **Data-availability features** (`count`, `gap_flag`, `time_since`) — ~1 h, largest measured
-   upside, addresses **R8**. Re-derive from raw pickles.
-2. **Telecommands as exogenous graph nodes** — addresses **R6** (unmet by every benchmark
-   algorithm). Data already preprocessed. Constrain edges `telecommand → channel` only.
-   ⚠️ **Never feed `is_anomaly` as a model input** — that is label leakage. Train-split labels may
-   be used as *supervision* (that's **R4**), never as a test-time feature.
-3. **Close the Telemanom config gap** — window 250, 10-step horizon, longer training, EWMA
-   smoothing. Also run the **top-k sweep**.
-4. **STGLR upgrades** — directed graph construction + GRU.
-5. **Per-window dynamic graph** — the genuinely novel gap; score the *change in graph structure*.
+1. **Seed stability (~1 h, MANDATORY before paper):** rerun GDNv2 M1+M2 with seeds {0,1,2};
+   report mean±std. M2's margin (+0.015) ≈ 1–2 events.
+2. **Killer ablation (~half day):** Telemanom-style LSTM **with** the availability features.
+   Either outcome strengthens the paper (feature vs model attribution) and pre-empts the
+   "baselines didn't have those inputs" critique.
+3. **Full-harness confirmation:** wrap GDNv2 as a TimeEval algorithm; produce headline numbers
+   through the actual Docker pipeline instead of the validated replica.
+4. **Federated GDNv2** — the capstone's novelty thesis on top of benchmark-beating solo
+   numbers (embedding local, TCN/attention/head shared; FedProx + trimmed-mean +
+   personalization fine-tune as validated in the earlier ablation).
+5. Then: top-k sweep, STGLR directed-graph ablation, per-window dynamic graph (unclaimed
+   territory), full 76/100-channel sets (Kaggle GPU).
 
-**Compute:** lightweight work runs fine on an M4 Air (MPS, ~23 s/epoch, ~1 GB RAM). Full channel
-sets and the TF-GPU baselines → Kaggle free GPU.
+Done since the old list: availability features ✅ (R8, the decisive ingredient),
+telecommand nodes ✅ (R6), window ≥250 ✅ (RF=253 TCN), EWMA smoothing ✅.
+⚠️ Still true: **never feed `is_anomaly` as a model input** (label leakage; train-split labels
+as supervision only = R4).
+
+**Compute:** GDNv2 runs comfortably on an M4 Air (MPS, ~40 s/epoch, error passes ~53 s,
+~2.7 GB RAM). Full channel sets and TF-GPU baselines → Kaggle free GPU.
 
 ---
 

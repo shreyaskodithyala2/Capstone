@@ -1,0 +1,23 @@
+START Sun Aug  9 23:46:41 IST 2026
+M1 channel_41: 15,381,169 raw samples (0s)
+M1 channel_42: 15,381,169 raw samples (0s)
+M1 channel_43: 15,381,169 raw samples (0s)
+M1 channel_44: 15,381,169 raw samples (0s)
+M1 channel_45: 15,381,169 raw samples (0s)
+M1 channel_46: 15,381,169 raw samples (0s)
+M1 train: T=7,364,161  gap-rows(any ch)=13,999 (0.19%)  tc_cols=11
+M1 test: T=7,364,161  gap-rows(any ch)=71,914 (0.98%)  tc_cols=11
+M2 channel_18: 7,387,262 raw samples (0s)
+M2 channel_19: 7,387,262 raw samples (0s)
+M2 channel_20: 7,387,262 raw samples (0s)
+M2 channel_21: 7,387,262 raw samples (0s)
+M2 channel_22: 7,387,262 raw samples (0s)
+M2 channel_23: 7,387,262 raw samples (0s)
+M2 channel_24: 7,387,262 raw samples (0s)
+M2 channel_25: 7,387,262 raw samples (0s)
+M2 channel_26: 7,387,262 raw samples (0s)
+M2 channel_27: 7,387,262 raw samples (0s)
+M2 channel_28: 7,387,262 raw samples (0s)
+M2 train: T=3,067,201  gap-rows(any ch)=39 (0.00%)  tc_cols=4
+M2 test: T=3,062,401  gap-rows(any ch)=136 (0.00%)  tc_cols=4
+EXIT 0 Sun Aug  9 23:48:23 IST 2026

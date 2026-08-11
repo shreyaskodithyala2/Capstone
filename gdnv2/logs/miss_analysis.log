@@ -1,0 +1,97 @@
+START Tue Aug 11 18:51:18 IST 2026
+final pred positives: 22,481 (0.305%)
+caught 31/65 events
+--- MISSED events (sorted by peak z at span 3) ---
+    id  cat  loc     n  hit  gap  burst   z1   z3  z15  z60  z240
+ id_15 Rare Glob  1087    0    0      0 16.7 22.1 21.8 14.5   6.3
+ id_44 Rare Glob    32    0    0      0 26.5 21.6 13.3 13.0   5.7
+id_180 Rare Glob  8540    0    0      0 14.9 21.4 34.2 43.7  43.5
+ id_50 Rare Loca   160    0    0    153 10.2 14.9 15.7 15.7   9.4
+id_154 Rare Glob   787    0    0      0  9.5 13.9 21.7 27.0  23.1
+id_117 Rare Glob   790    0    0      0  9.0 13.8 19.0 17.6  11.5
+id_136 Rare Glob    60    0    0      0 11.1 13.6 19.0 14.6   6.3
+id_125 Rare Glob  2593    0    0      0  8.3 12.2 17.9 17.5  11.6
+id_133 Rare Glob    50    0    0      0  9.1 10.6  8.6  5.3   2.8
+id_175 Rare Loca    50    0    0      0  7.5 10.4  9.7  5.5   2.6
+id_155 Rare Loca  6495    0    0      0  7.0  9.1  7.0  4.4   2.7
+id_123 Rare Glob   370    0    0      0  7.1  8.6  4.8  4.1   2.8
+id_138 Anom Glob  1788    0    0      0  6.4  8.5 12.9 12.2   9.2
+ id_24 Rare Loca  2821    0    0      0  5.9  8.2 11.3  8.3   3.4
+id_128 Rare Glob   114    0    0      0  9.8  8.2  3.8  2.1   1.2
+id_182 Rare Loca    46    0    0      0  6.9  7.8  5.6  3.4   1.5
+id_157 Anom Glob    53    0    0      0  5.5  7.6  9.9  6.8   3.3
+id_169 Rare Loca    18    0    0      0  6.5  6.8  7.6  4.6   2.2
+ id_51 Rare Loca   160    0    0      0  4.6  6.4  9.0  8.5   4.6
+ id_14 Rare Glob 57267    0    0      0  6.0  6.3  7.1  6.5   4.7
+id_147 Rare Loca     7    0    0      0  6.3  6.1  6.7  4.2   1.5
+id_159 Rare Loca    59    0    0      0  6.1  6.0  4.9  3.5   2.0
+id_164 Rare Loca    49    0    0      0  5.1  5.9  6.4  6.4   3.5
+id_139 Rare Loca    67    0    0      0  6.3  5.9  4.2  3.8   2.4
+ id_48 Rare Loca   135    0    0      0  4.1  5.5  5.7  4.4   2.4
+ id_40 Rare Loca    22    0    0      0  4.2  5.4  6.4  4.2   2.2
+id_153 Anom Glob    12    0    0      0  3.5  4.6  3.4  2.4   1.6
+ id_42 Anom Loca     2    0    0      0  5.5  4.4  2.4  1.0   0.4
+ id_55 Rare Loca     2    0    0      0  5.1  4.3  2.4  1.9   1.4
+ id_47 Rare Loca   255    0    0      0  4.2  4.2  4.7  3.7   2.2
+id_174 Rare Loca   173    0    0      0  4.1  3.7  2.7  1.7   1.4
+ id_49 Rare Loca   186    0    0    185  4.1  3.6  2.7  1.8   1.0
+ id_33 Rare Loca   400    0  313      0  1.5  1.1  0.3  0.4   0.5
+ id_28 Rare Loca   326    0  254      0  0.0  0.0  0.0  0.0   0.0
+--- CAUGHT events ---
+    id  cat  loc     n  hit   gap  burst    z1    z3   z15   z60  z240
+id_122 Anom Glob     2    1     0      0 594.7 481.1 213.1  84.0  28.5
+id_176 Anom Glob     2    1     0      0 551.8 454.6 208.9  88.3  31.5
+id_160 Anom Glob     2    1     0      0 551.3 454.3 209.0  88.4  32.4
+id_140 Anom Glob     3    1     0      0 320.2 383.7 218.1  90.3  27.5
+id_166 Anom Glob     3    1     0      0 340.1 309.3 110.8  34.0  13.4
+id_186 Anom Glob     2    1     0      1 322.6 263.0 119.3  46.4  13.4
+id_187 Anom Glob     2    1     0      1 323.2 262.9 118.8  46.6  14.1
+id_129 Anom Glob     2    1     0      0 319.4 260.0 117.7  45.9  13.7
+id_124 Anom Glob     2    1     0      0 319.0 259.5 117.1  46.1  15.1
+id_118 Anom Glob     2    1     0      0 318.6 258.8 116.6  45.6  13.3
+id_150 Anom Glob     2    1     0      0 297.7 247.3 124.4  57.3  21.1
+id_116 Anom Glob 17138    1  6079      0 143.2 228.3 364.1 413.7 423.2
+id_177 Anom Glob     2    1     0      0 289.2 227.6 103.5  42.4  12.8
+id_130 Anom Glob     2    1     0      0 288.4 226.4 102.3  43.0  13.6
+id_121 Anom Glob     2    1     0      0 285.6 225.3 102.2  42.4  13.7
+id_172 Anom Glob     3    1     0      0 282.7 222.0 101.4  42.6  14.2
+id_183 Anom Glob     2    1     0      0 338.7 206.4  58.8  16.7   5.9
+id_184 Anom Glob     2    1     0      0 338.5 206.2  58.6  17.5   5.9
+id_132 Anom Glob     2    1     0      0 338.6 206.0  58.0  17.2   5.9
+id_149 Anom Glob     2    1     0      0 335.9 204.6  58.5  19.7   7.5
+id_165 Anom Glob     2    1     0      0 335.5 204.2  58.0  19.6   7.7
+id_142 Anom Glob     2    1     0      0 332.9 203.1  58.5  17.2   5.4
+id_145 Anom Glob  6302    1     0    291  42.7  54.3  84.9 114.3 151.1
+id_134 Anom Glob 81720    1 63242      0  12.0  14.6  21.1  22.2  24.8
+ id_32 Rare Loca   388    1   304      0   0.6   0.9   1.0   0.9   0.4
+ id_31 Rare Loca   406    1   319      0   0.9   0.7   0.0   0.1   0.0
+ id_26 Rare Loca   406    1   318      0   0.4   0.5   0.7   0.4   0.3
+ id_18 Anom Glob   295    1   231      0   0.0   0.0   0.0   0.0   0.0
+ id_27 Rare Loca   489    1   397      0   0.0   0.0   0.0   0.0   0.0
+ id_29 Rare Loca   134    1   107      0   0.0   0.0   0.0   0.0   0.0
+ id_34 Rare Glob   416    1   393      0   0.0   0.0   0.0   0.0   0.0
+--- miss rate by category / locality / duration ---
+by cat:
+       n  caught  rate
+cat                   
+Anom  29      25  86.0
+Rare  36       6  17.0
+by loc:
+       n  caught  rate
+loc                   
+Glob  40      26  65.0
+Loca  25       5  20.0
+by dur:
+         n  caught  rate
+dur                     
+<=5     23      21  91.0
+6-60    12       0   0.0
+61-600  18       7  39.0
+>600    12       3  25.0
+--- background percentiles of cleaned z ---
+  span   1: p99=    3.7  p99.9=    15.8  max=    594.7
+  span   3: p99=    3.8  p99.9=    26.1  max=    481.1
+  span  15: p99=    4.9  p99.9=    52.4  max=    364.1
+  span  60: p99=    5.2  p99.9=    93.1  max=    413.7
+  span 240: p99=    4.6  p99.9=   127.1  max=    423.2
+EXIT 0 Tue Aug 11 18:52:53 IST 2026
