@@ -1,0 +1,43 @@
+{
+ "mission": "M1",
+ "config": {
+  "p": 0.3,
+  "zmode": "local",
+  "q": 0.9999,
+  "close": 60,
+  "minlen": 3,
+  "gapL": 10,
+  "boost": 0.6
+ },
+ "train_f05": 0.7748220050790797,
+ "thr_value": 20.211134510039642,
+ "spans": [
+  1,
+  3,
+  15,
+  60,
+  240
+ ],
+ "block": 2880,
+ "test": {
+  "global_alarming_precision": 0.7954545454545454,
+  "global_EW_precision": 0.9992501576893319,
+  "global_EW_recall": 0.5384615384615384,
+  "global_EW_F_0.50": 0.8532212848190971,
+  "global_AFF_precision": 0.7494354083076765,
+  "global_AFF_recall": 0.49946328581746774,
+  "global_AFF_F_0.50": 0.6812452796892564,
+  "chan_channel_precision": 0.5384615384615384,
+  "chan_channel_recall": 0.36666666666666664,
+  "chan_channel_F0.50": 0.4740003586157432,
+  "chan_subsystem_precision": 0.5384615384615384,
+  "chan_subsystem_recall": 0.5384615384615384,
+  "chan_subsystem_F0.50": 0.5384615384615384,
+  "adtqc_Nb_Before": 23.0,
+  "adtqc_Nb_After": 12.0,
+  "adtqc_AfterRate": 0.34285714285714286,
+  "adtqc_Total": 0.18639759056874808,
+  "perchannel_EW_F_0.50_mean": 0.6273508471431811,
+  "n_positive_rows": 23754
+ }
+}

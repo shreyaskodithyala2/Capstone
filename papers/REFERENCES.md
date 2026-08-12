@@ -28,6 +28,24 @@ table we compare against. **Cite as the primary dataset reference.**
 - SMAP/MSL *"should not be used for benchmarking due to unrealistic anomaly density, many trivial
   anomalies, mislabelled ground truth"* — important when reading other papers
 
+### SMED — our closest competitor on ESA-ADB ⭐⭐⭐
+`SMED_Brancato_PHM2025.pdf` — Brancato et al. *PHM Society European Conference*, 2025.
+
+**Legitimate**: real ESA-ADB, real ESA metrics, lightweight subsets. Must be cited and beaten
+honestly.
+
+| Aspect (Mission 1) | SMED | Ours (GDNv4) |
+|---|---|---|
+| Event-wise F0.5 | 0.801 | **0.8532** ✅ |
+| Channel-aware F0.5 | 0.444 | **0.4740** ✅ |
+| Alarming precision | 0.659 | **0.7955** ✅ |
+| ADTQC / after-rate | 0.160 / 0.103 | **0.1864 / 0.3429** ✅ |
+| **Mission 2 event-wise F0.5** | **0.971** ✅ | 0.9644 |
+
+⚠️ **Their comparison column is misleading.** SMED benchmarks only against Telemanom-ESA, so its
+"best ESA" for Mission 2 reads **0.842** — the actual published best is Windowed iForest at
+**0.949**. Do not inherit that error when citing them.
+
 ### OPS-SAT benchmark
 `OPSSAT-AD_Ruszczak_2025.pdf` — Ruszczak, Kotowski, Evans, Nalepa. *Scientific Data*, 2025.
 
@@ -48,7 +66,7 @@ Multivariate Time Series.* AAAI 2021. arXiv:2106.06947.
 Four components: sensor embedding → graph structure learning (cosine + top-k) → graph-attention
 forecasting → graph deviation scoring. Evaluated on SWaT and WADI.
 
-**Use:** the architecture we implement. See `docs/03-GDN-MODEL.md`.
+**Use:** the architecture we implement. See `docs/03-METHOD.md`.
 
 ### STGLR — the best available upgrade ⭐⭐⭐
 `STGLR_Lai_Sensors2025.pdf` — Lai, Zhu, Li, Lan, Zuo. *STGLR: A Spacecraft Anomaly Detection
@@ -74,7 +92,7 @@ strongest baseline on Mission 1 (**0.786**).
 
 **The single most important lesson in this bibliography:** non-pruned scores **0.178**, pruned
 scores **0.786** — *same network*. On this benchmark, post-processing outweighs architecture.
-We ported this in `src/telemanom_prune.py`; it lifted our M1 from 0.080 → 0.337 with precision 1.00.
+We ported this in `federated/src/telemanom_prune.py`; it lifted our M1 from 0.080 → 0.337 with precision 1.00.
 
 ### DeepAnT
 `DeepAnT_Munir_2019.pdf` — CNN-based unsupervised forecasting for TS anomaly detection.

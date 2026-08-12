@@ -42,8 +42,13 @@ underperform on Mission 1.
 | Data-availability features | ✅ **done (GDNv2)** — the decisive ingredient |
 | Telecommands as model input | ✅ done (GDNv2: input-only exogenous graph nodes) |
 | **GDNv2: BOTH BENCHMARKS BEATEN (2026-08-10)** | ✅ **M1 0.8197 vs 0.786 · M2 0.9644 vs 0.949** |
-| Federated version of GDNv2 | ❌ not yet run (solo only) |
-| Seed-stability check (3 seeds) | ❌ **next task** (mandatory before paper) |
+| Full 5-aspect ESA scoreboard implemented | ✅ `GDNv3/src/esa_metrics.py`, validated at 0.41237 |
+| **GDNv4: M1 = 0.8532 (2026-08-12)** | ✅ **best M1 result published anywhere** (ESA 0.786, SMED 0.801) |
+| GDNv4 on M2 | ⏳ 432-config grid running (~200 done, best train 0.9048) |
+| GitHub repo restructured around the 2 winning models | ✅ 2026-08-12, branch `new` |
+| Federated version of GDNv2/v4 | ❌ not yet run (solo only) |
+| Seed-stability check (3 seeds) | ❌ **mandatory before paper** |
+| ADTQC fix (emit first index of merged run) | ❌ identified, not run |
 | Full 76/100-channel sets | ❌ untouched |
 
 ### Results — corrected event-wise F0.5, lightweight subsets
@@ -63,6 +68,39 @@ Federation ablation (oracle threshold — **internal comparison only**):
 |---|---|---|---|
 | M1 | 0.1765 | 0.1370 ❌ | **0.1892** ✅ |
 | M2 | 0.7739 | 0.7820 | **0.8050** ✅ |
+
+### ⭐⭐⭐ GDNv4 (2026-08-12, `~/Downloads/Capstone/ESA/GDNv3/`) — CURRENT BEST
+
+**M1 event-wise F0.5 = 0.8532** (P 0.9993, R 0.5385) — best published anywhere
+(ESA 0.786, SMED 0.801). Pre-registered config `p=0.3 zmode=local q=0.9999 close=60
+minlen=3 gapL=10 boost=0.6`, train F0.5 0.7748. **M2 v4 still running** (first config
+already train 0.8936).
+
+Full five-aspect scoreboard now implemented (`GDNv3/src/esa_metrics.py`, validated to
+reproduce the gap-detector 0.41237 exactly): global ESAScores + ChannelAwareFScore +
+ADTQC + per-channel. **We had only ever measured 2 of ESA's 5 aspects before this.**
+
+| aspect | best published | GDNv2 | **v4** |
+|---|---|---|---|
+| 1a event-wise F0.5 | 0.786 | 0.8197 | **0.8532** ✅ |
+| 2b channel-aware F0.5 | 0.837 | *n/m* | 0.4740 |
+| 3 alarming precision | 0.875 | 0.2279 | 0.7955 |
+| 4 ADTQC | 0.901 | *n/m* | 0.1864 ❌ |
+| 5 affiliation F0.5 | 0.734 | 0.6588 | 0.6812 |
+
+- v4 = GDNv2 core (Telemanom prune + gap detector) **+** GDNv3 additions (multi-span
+  block-local robust z, morphological closing, min-run filter, telecommand-gated lower
+  threshold, per-channel outputs).
+- **v3 ablation proved pruning is the precision engine**: removing it dropped EW precision
+  0.999 → 0.444 and F0.5 to 0.3827, while lifting alarmP to 0.640. Keep pruning.
+- **ADTQC regression is diagnosed**: `Nb_Before=23 vs Nb_After=12` — closing + TC-boost make
+  alarms fire before the labelled onset. Fix: emit the first index of each merged run.
+- **Competitor found**: SMED (Brancato et al., PHM Society, papers.phmsociety.org/…/4465) —
+  same subsets, M1 0.801 (we beat), **M2 0.971 (beats our 0.9644)**. Pure MASS similarity
+  search, no training, 16 s. Their ADTQC is 0.075–0.160 and they compare only vs Telemanom,
+  not the per-metric best. Fusing a MASS "distance to best recent match" branch with our
+  forecast error is an obvious, unclaimed next step.
+- Results log: `GDNv3/RESULTS.md`. Runner: `GDNv3/src/run_v4.py`.
 
 ### ⭐⭐ GDNv2 (2026-08-10, `~/Downloads/Capstone/ESA/GDNv2/`) — BOTH BENCHMARKS BEATEN
 
@@ -135,15 +173,36 @@ without the feature.
 ## 4. Repository / paths
 
 Everything is committed to **`github.com/shreyaskodithyala2/Capstone`, branch `new`**.
+The repo was restructured on 2026-08-12 around **the two winning models**:
 
 ```
-docs/01-DATASET.md  02-PREPROCESSING.md  03-GDN-MODEL.md  04-RESULTS.md  05-NEXT-STEPS.md
-preprocessing/  setup_env.sh  run_preprocessing.sh  build_official_images.sh  docker_build/  patches/
-src/            gdn.py  common.py  federated.py  official_score.py  telemanom_prune.py
-                train_m1.py  tune_best.py  tune_telemanom.py  official_repro.py  make_light_csvs.py
-papers/         REFERENCES.md + 22 PDFs (benchmark / models / federated / related / phase2)
-results/        run logs
+README.md                    repo map, TL;DR results, quick start, honest status
+CLAUDE.md                    this file
+docs/  01-DATASET  02-PREPROCESSING  03-METHOD  04-RESULTS
+       05-EVALUATION  06-ROADMAP  07-RELATED-WORK
+models/README.md             which model won what, and how they relate
+models/gdnv2/                ⭐ the shared network + Mission-2 winner (0.9644)
+       README.md  src/(9)  ablations/(3)  results/(7)
+models/gdnv4/                ⭐ Mission-1 winner (0.8532) + full 5-aspect scoreboard
+       README.md  RESULTS.md  src/(4)  ablations/(1)  results/(2)
+federated/  README.md  src/(9 incl. official_score.py, telemanom_prune.py)
+preprocessing/  README.md  setup_env.sh  run_preprocessing.sh
+                build_official_images.sh  docker_build/  patches/
+logs/                        13 run logs — the full iteration audit trail
+papers/                      REFERENCES.md + 23 PDFs (incl. SMED_Brancato_PHM2025.pdf)
+legacy/phase2-analysis/      superseded Phase-2 exploration
 ```
+
+⚠️ **`models/gdnv4/src/run_v4.py` imports `model.py` and `data.py` from `models/gdnv2/src/`.**
+GDNv4 is a better *detection stack* on GDNv2's trained encoder, not a separate network. Keep both.
+
+**Repo → local folder mapping** (the repo renames things):
+
+| Repo path | Local working folder |
+|---|---|
+| `models/gdnv2/` | `~/Downloads/Capstone/ESA/GDNv2/` |
+| `models/gdnv4/` | `~/Downloads/Capstone/ESA/GDNv3/` ← note the name mismatch |
+| `federated/` | `~/Downloads/Capstone/ESA/FederatedGDN/` |
 
 **Local working layout** (author's machine — adapt paths):
 
@@ -154,7 +213,8 @@ results/        run logs
 ├── ESA-Mission1/     raw Zenodo data (76 channels, 698 telecommands)
 ├── ESA-Mission2/     raw Zenodo data (100 channels, 123 telecommands)
 ├── FederatedGDN/     phase-A work (src/, logs/, data_light/, official_score.py replica)
-└── GDNv2/            ⭐ benchmark-beating work (src/, data/, results/, logs/, README.md)
+├── GDNv2/            ⭐ the shared network + M2 winner (src/, data/, results/, logs/)
+└── GDNv3/            ⭐ GDNv4 detection stack + 5-aspect metrics (src/, results/, RESULTS.md)
 ```
 
 ⚠️ `src/common.py` and `src/official_score.py` contain **absolute paths**. Edit `PREP` and the
@@ -278,20 +338,34 @@ Full annotated bibliography: `papers/REFERENCES.md`.
 
 ---
 
-## 10. Next steps, in priority order (post-GDNv2)
+## 10. Next steps, in priority order (post-GDNv4)
 
-1. **Seed stability (~1 h, MANDATORY before paper):** rerun GDNv2 M1+M2 with seeds {0,1,2};
-   report mean±std. M2's margin (+0.015) ≈ 1–2 events.
-2. **Killer ablation (~half day):** Telemanom-style LSTM **with** the availability features.
+1. **Seed stability (~1 h, MANDATORY before paper):** rerun GDNv2 M1+M2 and GDNv4 M1 with
+   seeds {0,1,2}; report mean±std. M2's margin (+0.015) ≈ 1–2 events.
+2. **ADTQC fix (~1 h):** emit the *first index* of each merged run instead of the whole closed
+   block. `Nb_Before=23` should collapse at no F0.5 cost. Only aspect where v4 regressed
+   against our own v3 (0.186 vs 0.562).
+3. **Federated GDNv4 (~half day) — the capstone's title claim.** Embeddings local;
+   TCN/attention/head shared; FedProx μ=0.01 + trimmed-mean + personalization fine-tune,
+   all already validated on the earlier model. This is a rerun on the winning encoder.
+4. **Killer ablation (~half day):** Telemanom-style LSTM **with** the availability features.
    Either outcome strengthens the paper (feature vs model attribution) and pre-empts the
    "baselines didn't have those inputs" critique.
-3. **Full-harness confirmation:** wrap GDNv2 as a TimeEval algorithm; produce headline numbers
+5. **Full-harness confirmation:** wrap GDNv4 as a TimeEval algorithm; produce headline numbers
    through the actual Docker pipeline instead of the validated replica.
-4. **Federated GDNv2** — the capstone's novelty thesis on top of benchmark-beating solo
-   numbers (embedding local, TCN/attention/head shared; FedProx + trimmed-mean +
-   personalization fine-tune as validated in the earlier ablation).
-5. Then: top-k sweep, STGLR directed-graph ablation, per-window dynamic graph (unclaimed
-   territory), full 76/100-channel sets (Kaggle GPU).
+6. **Chase SMED on M2** (their 0.971 vs our 0.9644): finish the M2 v4 grid, then sweep top-k
+   (we currently run a complete graph, which disables graph learning exactly where M2 needs
+   it — median inter-channel correlation 0.03). A MASS "distance to best recent match"
+   fusion branch is the other unclaimed idea.
+7. Then: STGLR directed-graph ablation, per-window dynamic graph (unclaimed territory),
+   full 76/100-channel sets (Kaggle GPU).
+
+**Research framing for the paper** (three contributions, descending confidence):
+**C1** availability-aware detection (R8) — proven, and it is a finding about *the benchmark*;
+**C2** genuine cross-mission federation (two real spacecraft, not time-slices) with mandatory
+personalization; **C3** *personalised detection policies* under federation — the same encoder
+needs opposite decision rules per mission (prune: M1 0.8532 / M2 0.014; absolute-z: M1 0.137 /
+M2 0.9644), which is worth ~0.8 F0.5 and is not what personalised-FL literature personalises.
 
 Done since the old list: availability features ✅ (R8, the decisive ingredient),
 telecommand nodes ✅ (R6), window ≥250 ✅ (RF=253 TCN), EWMA smoothing ✅.
@@ -333,3 +407,14 @@ as supervision only = R4).
   to 13 days).
 - **Do not cite DFSat** (retracted), and **do not quote STGLR's 0.97** as comparable.
 - **Do not run `mission1_experiments.py` wholesale** — 120-hour timeouts across many algorithms.
+- **Do not remove Telemanom pruning from the M1 stack** — the v3 ablation proved it is the
+  precision engine (0.999 → 0.444 without it). Conversely, **do not add pruning to M2**
+  (0.9644 → 0.014).
+- **Do not emit one global score broadcast to all channels** — channel-aware F0.5 drops
+  0.474 → 0.123. Aspect 2b requires per-channel predictions.
+- **Do not delete `models/gdnv2/`** thinking gdnv4 supersedes it — v4 imports v2's `model.py`
+  and `data.py`, and v2 still holds the Mission-2 winner.
+- **Do not inherit SMED's "best ESA = 0.842" figure for M2** — they compared only against
+  Telemanom-ESA; the real published best is Windowed iForest at 0.949.
+- **Do not report only aspect 1a.** Reporting the headline alone hides the ADTQC regression.
+- **Do not commit datasets** to the repo (~8 GB raw, ~34 GB preprocessed).

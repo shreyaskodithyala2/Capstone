@@ -142,7 +142,7 @@ is the off state.
 
 **Why they matter:** if operators command a mode change, sensors *will* jump — that's expected,
 not an anomaly. The ESA-ADB paper flags telecommands as **requirement R6, which no benchmark
-algorithm satisfies.** This is an open opportunity (see `docs/05-NEXT-STEPS.md`).
+algorithm satisfies.** This is an open opportunity (see [`06-ROADMAP.md`](06-ROADMAP.md)).
 
 Priority scale is 0 (low mission impact) → 3 (high). The official preprocessing keeps only
 **priority ≥ 3**: 11 of 698 for M1, 4 of 123 for M2.
