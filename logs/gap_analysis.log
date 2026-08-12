@@ -1,0 +1,22 @@
+START Sun Aug  9 23:49:13 IST 2026
+===== TRAIN (7,364,161 rows) =====
+gap runs (all-ch silent): 3196  | len: med=5 p90=5 max=708
+events in period: 49  (22 anomaly / 27 rare)
+events containing a gap: 5/49 (10%)
+gap runs fully OUTSIDE events: 774/3196  | their lens: [6, 6, 7, 7, 13, 29, 29, 708]
+  L>=  1: EW_F0.5=0.0130  (P=0.011 R=0.102)
+  L>=  2: EW_F0.5=0.0140  (P=0.012 R=0.102)
+  L>=  3: EW_F0.5=0.0155  (P=0.013 R=0.102)
+  L>=  5: EW_F0.5=0.0211  (P=0.018 R=0.102)
+  L>= 10: EW_F0.5=0.2459  (P=1.000 R=0.061)
+  L>= 20: EW_F0.5=0.0000  (P=0.000 R=0.000)
+  L>= 40: EW_F0.5=0.0000  (P=0.000 R=0.000)
+  L>= 80: EW_F0.5=0.0000  (P=0.000 R=0.000)
+>> best L on TRAIN = 10 (F0.5=0.2459) -> evaluating ONLY this on TEST
+===== TEST (7,364,161 rows) =====
+gap runs (all-ch silent): 16676  | len: med=5 p90=5 max=19
+events in period: 65  (29 anomaly / 36 rare)
+events containing a gap: 11/65 (17%)
+gap runs fully OUTSIDE events: 124/16676  | their lens: [4, 4, 4, 4, 4, 4, 4, 6]
+  L>= 10: EW_F0.5=0.4124  (P=1.000 R=0.123)
+EXIT 0 Sun Aug  9 23:50:37 IST 2026

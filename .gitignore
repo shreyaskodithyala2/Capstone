@@ -1,0 +1,23 @@
+# datasets - far too large for git (~8 GB raw, ~34 GB preprocessed)
+ESA-Mission1/
+ESA-Mission2/
+ESA-ADB/
+data/
+data_light/
+*.zip
+# preprocessed outputs
+*.train.csv
+*.test.csv
+*.metadata.json
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+# models
+*.pt
+*.pth
+*.h5
+*.pkl
+# os
+.DS_Store

@@ -1,0 +1,19 @@
+START Mon Aug 10 00:20:07 IST 2026
+=== TRAIN sweep (tuning) ===
+  m30_t20_b0: F0.5=0.2702 (P=0.294 R=0.204)  <-- new best
+  m30_t30_b0: F0.5=0.2825 (P=0.312 R=0.204)  <-- new best
+  m30_t40_b0: F0.5=0.3759 (P=0.476 R=0.204)  <-- new best
+  m30_t60_b0: F0.5=0.3982 (P=0.562 R=0.184)  <-- new best
+  m30_t80_b0: F0.5=0.4128 (P=0.600 R=0.184)  <-- new best
+>> PRE-REGISTERED: margin=30 thr=80 burst_minlen=0 (train F0.5=0.4128)
+=== TEST (headline) ===
+F0.5=0.2973  P=0.3667  R=0.1692
+=== TEST analysis grid ===
+  thr=30 burst=0: F0.5=0.2817 (P=0.324 R=0.185)
+  thr=30 burst=2: F0.5=0.2422 (P=0.250 R=0.215)
+  thr=60 burst=0: F0.5=0.3175 (P=0.387 R=0.185)
+  thr=60 burst=2: F0.5=0.2641 (P=0.280 R=0.215)
+  thr=120 burst=0: F0.5=0.3039 (P=0.379 R=0.169)
+  thr=120 burst=2: F0.5=0.2682 (P=0.286 R=0.215)
+DONE
+EXIT 0 Mon Aug 10 00:33:18 IST 2026

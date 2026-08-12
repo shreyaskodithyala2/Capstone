@@ -1,0 +1,13 @@
+START Wed Aug 12 08:01:23 IST 2026
+[M2] errors 141s
+[M2] z built 161s
+  prune p=0.05 train rows=61,700 (174s)
+  prune p=0.13 train rows=19,327 (188s)
+  prune p=0.3 train rows=3,410 (201s)
+[M2] TRAIN tuning (432 configs)
+  [1/432] p=0.05 z=none   q=0.9999 close=  0 ml=1 b=None -> F0.5=0.8936 (P=0.994 R=0.636 aP=0.878)  *
+  [40/432] ... best 0.8936 (596s)
+  [73/432] p=0.05 z=global q=0.9999 close=  0 ml=1 b=None -> F0.5=0.8950 (P=0.994 R=0.640 aP=0.879)  *
+  [74/432] p=0.05 z=global q=0.9999 close=  0 ml=1 b=0.6 -> F0.5=0.9048 (P=0.994 R=0.665 aP=0.854)  *
+  [80/432] ... best 0.9048 (1323s)
+  [120/432] ... best 0.9048 (11810s)

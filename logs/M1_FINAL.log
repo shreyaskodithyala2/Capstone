@@ -1,0 +1,11 @@
+START Mon Aug 10 01:03:22 IST 2026
+=== TRAIN: choose p within the fixed family ===
+  p=0.05: F0.5=0.7262 (P=0.999 R=0.347)
+  p=0.13: F0.5=0.7262 (P=0.999 R=0.347)
+  p=0.2: F0.5=0.7262 (P=0.999 R=0.347)
+  p=0.3: F0.5=0.7262 (P=0.999 R=0.347)
+>> FINAL PRE-REGISTERED: clean+gap, span=5, margin=30, L=10, p=0.3 (train F0.5=0.7262)
+=== TEST (FINAL HEADLINE) ===
+F0.5=0.8197  P=0.9993  R=0.4769
+DONE
+EXIT 0 Mon Aug 10 01:07:03 IST 2026

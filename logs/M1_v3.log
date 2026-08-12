@@ -1,0 +1,50 @@
+START Wed Aug 12 01:44:14 IST 2026
+[M1] errors computed  111s
+[M1] z built 142s | local p99=4.3 p99.9=8.6 | global p99=4.3 p99.9=84.0
+[M1] TRAIN tuning (216 configs, fast global-only scoring)
+  [1/216] z=local  q=0.999 close=  0 minlen=1 boost=None -> F0.5=0.0038 (P=0.003 R=0.571 alarmP=0.418)  *
+  [2/216] z=local  q=0.999 close=  0 minlen=1 boost=0.6 -> F0.5=0.0042 (P=0.003 R=0.633 alarmP=0.369)  *
+  [3/216] z=local  q=0.999 close=  0 minlen=3 boost=None -> F0.5=0.0190 (P=0.015 R=0.429 alarmP=0.429)  *
+  [4/216] z=local  q=0.999 close=  0 minlen=3 boost=0.6 -> F0.5=0.0257 (P=0.021 R=0.592 alarmP=0.460)  *
+  [15/216] z=local  q=0.9995 close=  0 minlen=3 boost=None -> F0.5=0.0355 (P=0.029 R=0.367 alarmP=0.529)  *
+  [16/216] z=local  q=0.9995 close=  0 minlen=3 boost=0.6 -> F0.5=0.0479 (P=0.039 R=0.510 alarmP=0.521)  *
+  [25/216] z=local  q=0.9998 close=  0 minlen=1 boost=None -> F0.5=0.1247 (P=0.110 R=0.265 alarmP=0.464)  *
+  [26/216] z=local  q=0.9998 close=  0 minlen=1 boost=0.6 -> F0.5=0.1517 (P=0.132 R=0.367 alarmP=0.486)  *
+  [28/216] z=local  q=0.9998 close=  0 minlen=3 boost=0.6 -> F0.5=0.1763 (P=0.161 R=0.286 alarmP=0.438)  *
+  [30/216] z=local  q=0.9998 close= 60 minlen=1 boost=0.6 -> F0.5=0.1918 (P=0.171 R=0.367 alarmP=0.692)  *
+  [32/216] z=local  q=0.9998 close= 60 minlen=3 boost=0.6 -> F0.5=0.1989 (P=0.183 R=0.306 alarmP=0.652)  *
+  [36/216] z=local  q=0.9998 close=240 minlen=3 boost=0.6 -> F0.5=0.2054 (P=0.190 R=0.306 alarmP=0.652)  *
+  [37/216] z=local  q=0.9999 close=  0 minlen=1 boost=None -> F0.5=0.3719 (P=0.500 R=0.184 alarmP=0.500)  *
+  [38/216] z=local  q=0.9999 close=  0 minlen=1 boost=0.6 -> F0.5=0.4248 (P=0.500 R=0.265 alarmP=0.591)  *
+  [40/216] z=local  q=0.9999 close=  0 minlen=3 boost=0.6 -> F0.5=0.4255 (P=0.522 R=0.245 alarmP=0.571)  *
+  [42/216] z=local  q=0.9999 close= 60 minlen=1 boost=0.6 -> F0.5=0.4744 (P=0.591 R=0.265 alarmP=0.812)  *
+  [50/216] ... best so far 0.4744  (453s)
+  [75/216] ... best so far 0.4744  (601s)
+  [100/216] ... best so far 0.4744  (745s)
+  [125/216] ... best so far 0.4744  (890s)
+  [150/216] ... best so far 0.4744  (1036s)
+  [175/216] ... best so far 0.4744  (1182s)
+  [200/216] ... best so far 0.4744  (1329s)
+>>> PRE-REGISTERED CONFIG (train F0.5=0.4744): {'zmode': 'local', 'q': 0.9999, 'close': 60, 'minlen': 1, 'gapL': 10, 'boost': 0.6}
+===== M1 TEST — ALL ESA ASPECTS =====
+  global_EW_F_0.50                   0.3827
+  global_EW_precision                0.4443
+  global_EW_recall                   0.2462
+  global_alarming_precision          0.6400
+  global_AFF_F_0.50                  0.6856
+  chan_channel_F0.50                 0.2238
+  chan_subsystem_F0.50               0.2462
+  adtqc_Total                        0.5623
+  adtqc_AfterRate                    0.9375
+  perchannel_EW_F_0.50_mean          0.3399
+  global_AFF_precision               0.7524261458808639
+  global_AFF_recall                  0.5058355530035881
+  chan_channel_precision             0.24615384615384617
+  chan_channel_recall                0.2025641025641026
+  chan_subsystem_precision           0.24615384615384617
+  chan_subsystem_recall              0.24615384615384617
+  adtqc_Nb_Before                    1.0
+  adtqc_Nb_After                     15.0
+  n_positive_rows                    4243
+DONE 1520s
+EXIT 0 Wed Aug 12 02:09:36 IST 2026
