@@ -1,0 +1,35 @@
+# python tests/test_reproduce_results.py  -- run 2026-10-12 after the restructure
+Mission 1 lightweight
+  OK  threshold (train quantile)         20.211135
+  OK  train event-wise F0.5              0.774822
+  OK  test global_alarming_precision     0.795455
+  OK  test global_EW_precision           0.999250
+  OK  test global_EW_recall              0.538462
+  OK  test global_EW_F_0.50              0.853221
+  OK  test global_AFF_precision          0.749435
+  OK  test global_AFF_recall             0.499463
+  OK  test global_AFF_F_0.50             0.681245
+  OK  test chan_channel_precision        0.538462
+  OK  test chan_channel_recall           0.366667
+  OK  test chan_channel_F0.50            0.474000
+  OK  test chan_subsystem_precision      0.538462
+  OK  test chan_subsystem_recall         0.538462
+  OK  test chan_subsystem_F0.50          0.538462
+  OK  test adtqc_Nb_Before               23.000000
+  OK  test adtqc_Nb_After                12.000000
+  OK  test adtqc_AfterRate               0.342857
+  OK  test adtqc_Total                   0.186398
+  OK  test perchannel_EW_F_0.50_mean     0.627351
+  OK  test n_positive_rows               23754.000000
+Mission 2 lightweight
+  OK  chosen z*                          20
+  OK  train event-wise F0.5              0.963354
+  OK  test alarming_precision            0.513473
+  OK  test EW_precision                  0.960636
+  OK  test EW_recall                     0.980000
+  OK  test EW_F_0.50                     0.964447
+  OK  test AFF_precision                 0.987860
+  OK  test AFF_recall                    0.968405
+  OK  test AFF_F_0.50                    0.983906
+
+ALL RESULTS REPRODUCED (655s)

@@ -1,0 +1,51 @@
+[M1_full] dev=cpu  channels=76 (inputs)  58 Target=YES (scored)  cpus=4  free RAM 30.8 GB
+[M1_full] all error arrays cached in /kaggle/temp/esa_cache -- model not loaded
+
+>>> REUSING PRE-REGISTERED config (chosen on TRAIN, F0.5=0.8815, written 2026-10-03 12:50): {'p': 0.3, 'zmode': 'global', 'tmode': 'perchan', 'q': 0.99999, 'close': 60, 'minlen': 3, 'gapL': 10, 'gapmult': 6.0, 'boost': 0.6}
+  [test] reusing cached errors (53s)
+  z stacks: 5 column groups on 3 worker(s)
+  [test] z stacks built (153s)
+      prune 20/76 channels (67s)
+      prune 40/76 channels (129s)
+      prune 60/76 channels (191s)
+  test predictions assembled, scoring (549s, free RAM 30.2 GB)
+
+===== M1_full TEST -- ALL ESA ASPECTS (58 scored channels) =====
+  global_EW_F_0.50                   0.4394
+  global_EW_precision                0.4452
+  global_EW_recall                   0.4176
+  global_alarming_precision          0.8085
+  global_AFF_F_0.50                  0.5870
+  chan_channel_F0.50                 0.1806
+  chan_subsystem_F0.50               0.3429
+  adtqc_Total                        0.4650
+  adtqc_AfterRate                    0.4333
+  perchannel_EW_F_0.50_mean          0.4668
+  global_AFF_precision               0.6499323650537142
+  global_AFF_recall                  0.4232355496649545
+  chan_channel_precision             0.2794403137417266
+  chan_channel_recall                0.11056673977350405
+  chan_subsystem_precision           0.38461538461538464
+  chan_subsystem_recall              0.2765567765567765
+  adtqc_Nb_Before                    17.0
+  adtqc_Nb_After                     13.0
+  anom_global_alarming_precision     0.9565217391304348
+  anom_global_EW_precision           0.32427697202939854
+  anom_global_EW_recall              0.4
+  anom_global_EW_F_0.50              0.33703773078717103
+  anom_global_AFF_precision          0.5889325962088786
+  anom_global_AFF_recall             0.33518481262413397
+  anom_global_AFF_F_0.50             0.5114892002118047
+  anom_chan_channel_precision        0.2743939393939394
+  anom_chan_channel_recall           0.0865121105178478
+  anom_chan_channel_F0.50            0.15783861026312726
+  anom_chan_subsystem_precision      0.38181818181818183
+  anom_chan_subsystem_recall         0.3181818181818182
+  anom_chan_subsystem_F0.50          0.35577856486947396
+  anom_adtqc_Nb_Before               14.0
+  anom_adtqc_Nb_After                4.0
+  anom_adtqc_AfterRate               0.2222222222222222
+  anom_adtqc_Total                   0.3206839041889722
+  n_positive_rows                    819081
+
+DONE 602s

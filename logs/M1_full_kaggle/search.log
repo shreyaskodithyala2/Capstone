@@ -1,0 +1,40 @@
+[M1_full] dev=cuda  channels=76 (inputs)  58 Target=YES (scored)  cpus=4  free RAM 30.7 GB
+[M1_full] all error arrays cached in /kaggle/temp/esa_cache -- model not loaded
+  [train] reusing cached errors (39s)
+  z stacks: 10 column groups on 2 worker(s)
+  [train] z stacks built (321s)
+  pruning 76 channels x p=[0.3, 0.13, 0.05] on 4 worker(s)
+      prune 20/76 channels (67s)
+      prune 40/76 channels (134s)
+      prune 60/76 channels (199s)
+  prune p=0.3 rows=53,429 (592s)
+  prune p=0.13 rows=99,640 (592s)
+  prune p=0.05 rows=104,301 (593s)
+  prune p=None rows=0 (593s)
+  12 thresholds precomputed on cuda (1186s)
+  search must end by 17:26 (551 min from now)
+  GPU search inputs on Tesla T4: 10.1 GB
+
+TRAIN tuning stage 1 (close=60, minlen=3 pinned): 300 configs | GPU assembly, 4 CPU worker(s) for ESA scoring
+  [1/300] {'p': 0.3, 'zmode': 'local', 'tmode': 'global', 'q': 0.9999, 'close': 60, 'minlen': 3, 'gapL': 10, 'gapmult': 6.0, 'boost': 0.6} -> F0.5=0.8454  *
+  [7/300] {'p': 0.3, 'zmode': 'local', 'tmode': 'global', 'q': 0.99999, 'close': 60, 'minlen': 3, 'gapL': 10, 'gapmult': 6.0, 'boost': 0.6} -> F0.5=0.8454  *
+  [19/300] {'p': 0.3, 'zmode': 'local', 'tmode': 'perchan', 'q': 0.99999, 'close': 60, 'minlen': 3, 'gapL': 10, 'gapmult': 6.0, 'boost': 0.6} -> F0.5=0.8688  *
+  [25/300] ... best 0.8688 | 30.1 min, ~331 min left
+  [43/300] {'p': 0.3, 'zmode': 'global', 'tmode': 'perchan', 'q': 0.99999, 'close': 60, 'minlen': 3, 'gapL': 10, 'gapmult': 6.0, 'boost': 0.6} -> F0.5=0.8815  *
+  [50/300] ... best 0.8815 | 52.9 min, ~264 min left
+  [75/300] ... best 0.8815 | 75.6 min, ~227 min left
+  [100/300] ... best 0.8815 | 98.4 min, ~197 min left
+  [125/300] ... best 0.8815 | 121.2 min, ~170 min left
+  [150/300] ... best 0.8815 | 144.0 min, ~144 min left
+  [175/300] ... best 0.8815 | 166.7 min, ~119 min left
+  [200/300] ... best 0.8815 | 189.5 min, ~95 min left
+  [225/300] ... best 0.8815 | 212.3 min, ~71 min left
+  [250/300] ... best 0.8815 | 235.0 min, ~47 min left
+  [275/300] ... best 0.8815 | 257.7 min, ~23 min left
+  [300/300] ... best 0.8815 | 273.2 min, ~0 min left
+
+TRAIN tuning stage 2 (close x minlen): 5 configs | GPU assembly, 4 CPU worker(s) for ESA scoring
+
+>>> PRE-REGISTERED (train F0.5=0.8815): {'p': 0.3, 'zmode': 'global', 'tmode': 'perchan', 'q': 0.99999, 'close': 60, 'minlen': 3, 'gapL': 10, 'gapmult': 6.0, 'boost': 0.6}
+[M1_full] train phase freed (17751s)
+search stage done (17751s)

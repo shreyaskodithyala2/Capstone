@@ -1,0 +1,5 @@
+[M1_full] dev=cuda  channels=76 (inputs)  58 Target=YES (scored)  cpus=4  free RAM 30.8 GB
+[M1_full] model n_ch=76 n_tc=11 topk=10
+  [train] error arrays cached (135s)
+  [test] error arrays cached (268s)
+errors-only: done (268s)

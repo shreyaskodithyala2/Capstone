@@ -1,0 +1,21 @@
+validation from 2006-10-01: rows 7,099,200..7,364,161 (264,961 rows)
+M1_full: T_train=7,364,161 n_ch=76 n_tc=11 dev=cuda
+  DataParallel on 2 GPUs
+  step time fp32 609 ms | AMP fp16 313 ms -> AMP
+  ep1: train=0.44056 val=0.17813 (97s, 324 ms/batch)
+  ep2: train=0.27312 val=0.18306 (97s, 325 ms/batch)
+  ep3: train=0.26769 val=0.14229 (98s, 326 ms/batch)
+  ep4: train=0.20641 val=0.15120 (99s, 329 ms/batch)
+  ep5: train=0.21333 val=0.11875 (99s, 329 ms/batch)
+  ep6: train=0.18536 val=0.10801 (99s, 330 ms/batch)
+  ep7: train=0.18247 val=0.08693 (100s, 332 ms/batch)
+  ep8: train=0.17323 val=0.09154 (100s, 334 ms/batch)
+  ep9: train=0.18834 val=0.07683 (99s, 331 ms/batch)
+  ep10: train=0.16337 val=0.08926 (100s, 333 ms/batch)
+  ep11: train=0.15239 val=0.08570 (98s, 328 ms/batch)
+  ep12: train=0.16056 val=0.07996 (99s, 331 ms/batch)
+  ep13: train=0.13431 val=0.08722 (99s, 330 ms/batch)
+  early stop
+saved /kaggle/working/results/M1_full_v1.pt
+trained in 1317s
+--train-only: skipping the global-threshold report

@@ -1,0 +1,12 @@
+# local only: data, notes, references, assistant context
+data/
+dataset_reference/
+docs/IDEAS_BACKLOG.md
+CLAUDE.md
+
+# generated / scratch
+kaggle/build/
+results/cache/
+__pycache__/
+*.pyc
+.DS_Store
